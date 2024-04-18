@@ -10,3 +10,4 @@ export class Note {
     this.content = content;
     this.user = user;
   }
+}
