@@ -20,3 +20,8 @@ export function getNoteById(id: number): Note | undefined {
   const note = notes.find(note => note.id === id)
   return note
 }
+
+export function writeNotesToFile(oldNotes: Note[]): void {
+  const newNotes: NotesRaw = { notes: oldNotes }
+  fs.writeFileSync('data/notes.json', JSON.stringify(newNotes))
+}
